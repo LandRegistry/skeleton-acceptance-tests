@@ -1,0 +1,12 @@
+version: '2'
+services:
+  # Notice how the service name, container name and repo directory (where the Dockerfile lives) all match.
+  # As this is a ruby acceptance tests app, it is not designed to run always, just ad hoc commands to run the tests.
+  # No log redirect, no port, no restart policy.
+  skeleton-acceptance-tests:
+    container_name: skeleton-acceptance-tests
+    build: ./skeleton-acceptance-tests
+
+    volumes:
+      # Our convention is to always map the app files to /src within the container
+      - ./skeleton-acceptance-tests:/src

@@ -1,0 +1,3 @@
+---
+# Details any commodities to be used. List availabe in the .commodities.yml file
+#commodities: ["nginx"]
