@@ -61,8 +61,8 @@ you can add the skeleton into your`configuration.yml`.
 
 ```yaml
   skelton-acceptance-tests:
-    repo: link_to_repo
-    branch: develop
+    repo: git@github.com:LandRegistry/skeleton-acceptance-tests.git
+    branch: master
 ```
 
 ## Quick Start

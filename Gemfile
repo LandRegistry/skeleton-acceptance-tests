@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Required gem source - RubyGems server
 source 'http://rubygems.org'
 
@@ -10,8 +12,8 @@ gem 'capybara', '~> 3.29.0'
 gem 'capybara-screenshot', '~> 1.0.23'
 gem 'cucumber', '~> 3.1.2'
 gem 'multipart-post', '~> 2.1.1'
+gem 'rspec', '~> 3.9.0'
 gem 'rubocop', '~> 0.75.0'
 gem 'rubocop-performance', '~> 1.5.0'
-gem 'rspec', '~> 3.9.0'
 gem 'selenium-webdriver', '3.142.6'
 gem 'test-unit', '~> 3.3.4'
