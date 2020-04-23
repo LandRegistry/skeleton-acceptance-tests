@@ -27,7 +27,7 @@ The key technologies used are:
 * [Chromedriver][7]
 
 
-![Acceptance test flow](skeleton_architecture.png)
+![Acceptance test flow](reference_docs/skeleton_architecture.png)
 
 
 *High level acceptance test architecture diagram*
@@ -60,7 +60,7 @@ If you are already familiar with the [common-dev-env][3] and have an existing de
 you can add the skeleton into your`configuration.yml`.
 
 ```yaml
-  skelton-acceptance-tests:
+  skeleton-acceptance-tests:
     repo: git@github.com:LandRegistry/skeleton-acceptance-tests.git
     branch: master
 ```

@@ -1,0 +1,8 @@
+### Acceptance test files
+report.json
+*.xml
+*.jpg
+*.DS_Store
+*.idea
+sshot*
+screenshot*
