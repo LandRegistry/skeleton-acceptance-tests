@@ -17,8 +17,39 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Build and test with Rake
+    - name: Build
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3
-        cucumber
+        bundle install
+        gem list
+        ruby -v
+
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+      - name: Linting
+        run: |
+          gem install bundler
+          rubocop
+
+  run_pass:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests expected to pass
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+      - name: run_pass
+        run: |
+          gem install bundler
+          ./run_tests.sh --tags @pass
