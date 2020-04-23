@@ -60,7 +60,7 @@ If you are already familiar with the [common-dev-env][3] and have an existing de
 you can add the skeleton into your`configuration.yml`.
 
 ```yaml
-  skelton-acceptance-tests:
+  skeleton-acceptance-tests:
     repo: git@github.com:LandRegistry/skeleton-acceptance-tests.git
     branch: master
 ```
