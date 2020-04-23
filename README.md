@@ -1,3 +1,5 @@
+![Ruby](https://github.com/LandRegistry/skeleton-acceptance-tests/workflows/Ruby/badge.svg?branch=master)
+
 # Skeleton Acceptance Tests
 
 This repository is a Skeleton to run Cucumber acceptance tests (with [Ruby][1] and [Selenium][2]), as part of the Land Registry [common-dev-env][3].
