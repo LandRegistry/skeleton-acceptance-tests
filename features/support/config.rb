@@ -24,6 +24,7 @@ Capybara.default_driver = :chrome
 Capybara.javascript_driver = :chrome
 
 # Screenshot settings
+Capybara.save_path = './screenshots/'
 Capybara::Screenshot.prune_strategy = :keep_last_run
 
 # Screenshot driver for :chrome

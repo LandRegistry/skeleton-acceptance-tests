@@ -27,7 +27,7 @@ The key technologies used are:
 * [Chromedriver][7]
 
 
-![Acceptance test flow](skeleton_architecture.png)
+![Acceptance test flow](reference_docs/skeleton_architecture.png)
 
 
 *High level acceptance test architecture diagram*
