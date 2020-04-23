@@ -2,7 +2,7 @@
 
 # installs the gems listed in Gemfile
 # Useful if run outside of a Docker environment
-bundle install
+# bundle install
 
 # Calls the linting script
 sh run_linting.sh

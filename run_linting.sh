@@ -1,5 +1,5 @@
 #!/bin/bash -l
-bundle install
+# bundle install
 echo "- - - Running Linting check with Rubocop - - -"
 rubocop
 exit $?
