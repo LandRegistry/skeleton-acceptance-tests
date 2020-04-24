@@ -16,7 +16,7 @@ Given('I search Google for {string}') do |search_term|
 
   # Clicks the first search button on the page
   # This handles multiple search buttons on the pages
-  click_button('Google Search', match: :first)
+  # click_button('Google Search', match: :first)
 end
 
 Then('the text {string} is displayed on the page') do |search_text|

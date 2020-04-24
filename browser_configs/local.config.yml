@@ -1,0 +1,7 @@
+common_caps:
+  build: capybara-browserstack
+  browserstack.debug: true
+
+browser_caps:
+  - browser: firefox
+    browserstack.local: true
