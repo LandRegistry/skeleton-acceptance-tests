@@ -1,0 +1,6 @@
+browser_caps:
+  -
+    "browser": "Internet Explorer"
+    "os": "Windows"
+    "os_version": "7"
+

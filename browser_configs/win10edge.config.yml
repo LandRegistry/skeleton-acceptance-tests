@@ -1,0 +1,5 @@
+browser_caps:
+  -
+    "browser": "Edge"
+    "os": "Windows"
+    "os_version": "10"
