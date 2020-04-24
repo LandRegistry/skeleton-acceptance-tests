@@ -22,6 +22,7 @@ CONFIG['common_caps'] = {}
 CONFIG['common_caps']['project'] = BS_PROJECT
 CONFIG['common_caps']['build'] = BS_PROJECT
 CONFIG['common_caps']['acceptInsecureCerts'] = true
+CONFIG['common_caps']['geoLocation'] = 'GB'
 
 Capybara.register_driver :browserstack do |app|
   @caps = CONFIG['common_caps'].merge(CONFIG['browser_caps'][TASK_ID])
