@@ -37,5 +37,23 @@ echo 'Mac OS Chrome'
 export BS_CONFIG=mac_chrome
 run_browser_tests
 
+# iOS Confings
+echo 'iOS Chrome'
+export BS_CONFIG=ios_chrome
+run_browser_tests
+
+echo 'iOS Safari'
+export BS_CONFIG=ios_safari
+run_browser_tests
+
+# Android Confings
+echo 'Android Chrome'
+export BS_CONFIG=android_chrome
+run_browser_tests
+
+echo 'Android Samsung Internet'
+export BS_CONFIG=android_samsung
+run_browser_tests
+
 #Set default driver back to chrome
 export WEB_DRIVER=chrome

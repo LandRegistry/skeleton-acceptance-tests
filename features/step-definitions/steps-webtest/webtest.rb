@@ -8,7 +8,7 @@ end
 
 Given('I search Google for {string}') do |search_term|
   # Use RSPEC assertion to make sure we are on the correct page
-  expect(page).to have_content('Gmail')
+  expect(page).to have_content('Google')
 
   # Use Capybara "fill_in" method to put text from "search_term" variable
   # into the Google search field. which has  id: 'q'
