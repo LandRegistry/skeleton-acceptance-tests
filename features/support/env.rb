@@ -20,8 +20,13 @@
 # Test Fixture(s)
 # $JENKINS_WORK SPACE = ENV['JENKINS_WORKSPACE']
 
+# Default webdriver to use. String converted to Symbol
+WEB_DRIVER = ENV['WEB_DRIVER'].to_sym
+
+# BrowserStack env vars
 BS_USERNAME = ENV['BS_USERNAME']
 BS_ACCESS_KEY = ENV['BS_ACCESS_KEY']
-BS_BUILD = ENV['BS_BUILD']
 BS_PROJECT = ENV['BS_PROJECT']
+BS_BUILD = ENV['BS_BUILD']
 BS_SERVER = ENV['BS_SERVER']
+BS_CONFIG = ENV['BS_CONFIG']

@@ -9,8 +9,11 @@ RUN bundle install
 # The services in docker containers can not be accessed by localhost so need their container name and port 8080 specified
 ENV SERVICE_UI_DOMAIN 'http://docker-container:8080'
 
+ENV WEB_DRIVER 'chrome'
+
 ENV BS_USERNAME 'username'
 ENV BS_ACCESS_KEY 'key'
 ENV BS_PROJECT 'project'
 ENV BS_BUILD 'build'
 ENV BS_SERVER 'hub-cloud.browserstack.com'
+ENV BS_CONFIG 'win10edge'

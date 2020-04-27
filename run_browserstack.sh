@@ -1,17 +1,22 @@
 #!/bin/bash -l
 
-#TODO: Set default driver to BStack
+# TODO: Add more configs
+# TODO: Parameterize the run command
+
+#Set default driver to broswerstack
+export WEB_DRIVER=browserstack
 
 echo 'Windows 7 IE'
-export CONFIG_NAME=win7ie
+export BS_CONFIG=win7ie
 cucumber --format json --out report_win7ie.json --format pretty --tags @af
 
 echo 'Windows 10 Edge'
-export CONFIG_NAME=win10edge
+export BS_CONFIG=win10edge
 cucumber --format json --out report_win10edge.json --format pretty --tags @af
 
 echo 'Windows 10 Firefox'
-export CONFIG_NAME=single
+export BS_CONFIG=single
 cucumber --format json --out report_win10ff.json --format pretty --tags @af
 
-#TODO: Set default driver back to chrome
+#Set default driver back to chrome
+export WEB_DRIVER=chrome

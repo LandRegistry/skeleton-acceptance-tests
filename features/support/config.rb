@@ -20,15 +20,15 @@ World(Capybara::DSL)
 Capybara.default_selector = :id
 Capybara.default_max_wait_time = 10
 Capybara.app_host = 'http://localhost:4567'
-Capybara.default_driver = :chrome
-Capybara.javascript_driver = :chrome
+Capybara.default_driver = WEB_DRIVER
+Capybara.javascript_driver = WEB_DRIVER
 
 # Screenshot settings
 Capybara.save_path = './screenshots/'
 Capybara::Screenshot.prune_strategy = :keep_last_run
 
-# Screenshot driver for :chrome
-Capybara::Screenshot.register_driver(:chrome) do |driver, path|
+# Screenshot driver
+Capybara::Screenshot.register_driver(WEB_DRIVER) do |driver, path|
   driver.browser.save_screenshot(path)
 end
 
