@@ -182,7 +182,7 @@ It will also out put a `report_[config_name].json` file for each run configurati
 
 The script can be called with:
 ```shell
-run skeleton-acceptance-tests ./run_tests_browserstack.sh
+run skeleton-acceptance-tests ./run_browserstack.sh
 ```
 
 It's aimed to provide a simple way to run tagged scenarios through different configurations.
