@@ -1,22 +1,41 @@
 #!/bin/bash -l
 
-# TODO: Add more configs
-# TODO: Parameterize the run command
+function run_browser_tests() {
+  cucumber --format json --out report_$BS_CONFIG.json --format pretty --tags @browser
+}
 
 #Set default driver to broswerstack
 export WEB_DRIVER=browserstack
 
+# Windows Configs
 echo 'Windows 7 IE'
-export BS_CONFIG=win7ie
-cucumber --format json --out report_win7ie.json --format pretty --tags @af
+export BS_CONFIG=win7_ie
+run_browser_tests
 
 echo 'Windows 10 Edge'
-export BS_CONFIG=win10edge
-cucumber --format json --out report_win10edge.json --format pretty --tags @af
+export BS_CONFIG=win10_edge
+run_browser_tests
 
 echo 'Windows 10 Firefox'
-export BS_CONFIG=single
-cucumber --format json --out report_win10ff.json --format pretty --tags @af
+export BS_CONFIG=win10_ff
+run_browser_tests
+
+echo 'Windows 10 Chrome'
+export BS_CONFIG=win10_chrome
+run_browser_tests
+
+# Mac OS Configs
+echo 'Mac OS Safari 12'
+export BS_CONFIG=mac_safari12
+run_browser_tests
+
+echo 'Mac OS Firefox'
+export BS_CONFIG=mac_ff
+run_browser_tests
+
+echo 'Mac OS Chrome'
+export BS_CONFIG=mac_chrome
+run_browser_tests
 
 #Set default driver back to chrome
 export WEB_DRIVER=chrome

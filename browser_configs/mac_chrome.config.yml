@@ -1,0 +1,6 @@
+browser_caps:
+  -
+    "browser": "Chrome"
+    "os": "OS X"
+    "os_version": "Catalina"
+    

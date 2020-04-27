@@ -6,7 +6,7 @@ Feature: Search on Google
 - One test will pass
 - One test will fail, producing a screenshot, and saving the page HMTLs
 
-@google @pass @af
+@google @pass @browser
 Scenario: Search for Gamma on Google
 	Given I visit "https://www.google.co.uk/"
 		And I search Google for "Gamma"
