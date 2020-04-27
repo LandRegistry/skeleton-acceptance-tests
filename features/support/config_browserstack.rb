@@ -7,9 +7,13 @@ require 'yaml'
 require 'browserstack/local'
 
 # monkey patch to avoid reset sessions
-class Capybara::Selenium::Driver < Capybara::Driver::Base
-  def reset!
-    @browser.navigate.to('about:blank') if @browser
+module Capybara
+  module Selenium
+    class Driver < Capybara::Driver::Base
+      def reset!
+        @browser.navigate.to('about:blank') if @browser
+      end
+    end
   end
 end
 
