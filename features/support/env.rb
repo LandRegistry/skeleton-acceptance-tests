@@ -21,7 +21,7 @@
 # $JENKINS_WORK SPACE = ENV['JENKINS_WORKSPACE']
 
 # Default webdriver to use. String converted to Symbol
-WEB_DRIVER = ENV['WEB_DRIVER'].to_sym
+DRIVER = ENV['DRIVER'].to_sym
 
 # BrowserStack env vars
 BS_USERNAME = ENV['BS_USERNAME']

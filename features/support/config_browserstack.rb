@@ -27,6 +27,8 @@ CONFIG['common_caps']['project'] = BS_PROJECT
 CONFIG['common_caps']['build'] = BS_PROJECT
 CONFIG['common_caps']['acceptInsecureCerts'] = true
 CONFIG['common_caps']['geoLocation'] = 'GB'
+CONFIG['common_caps']['language'] = 'EN'
+CONFIG['common_caps']['locale'] = 'EN_GB'
 
 # BrowserStack Driver
 Capybara.register_driver :browserstack do |app|

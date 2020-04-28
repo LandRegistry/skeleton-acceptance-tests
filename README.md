@@ -188,10 +188,10 @@ run skeleton-acceptance-tests ./run_browserstack.sh
 It's aimed to provide a simple way to run tagged scenarios through different configurations.
 
 ### Change the default webdriver
-The `WEB_DRIVER` environment variable is referred to by the Capybara configuration in `features/support/config.rb`.
+The `DRIVER` environment variable is referred to by the Capybara configuration in `features/support/config.rb`.
 The default value is `chrome`, which will use the headless chrome configuration( `:chrome`) provided with the skeleton.
 
-To change this default, change your Dockerfile entry to read `ENV WEB_DRIVER 'browserstack'`, and rebuild the container.
+To change this default, change your Dockerfile entry to read `ENV DRIVER 'browserstack'`, and rebuild the container.
 This will use the driver `:browserstack` configuration in `features/support/config_browserstack.rb`.
 If you want to change browser configurations you will need to amend `BS_CONFIG` to another file from the `/browser_configs` folder too.
 
@@ -200,7 +200,7 @@ You can now run tests against BrowserStack remote devices using the standard `ac
 Example
 ```shell
 # Dockerfile changes
-ENV WEB_DRIVER 'browserstack'
+ENV DRIVER 'browserstack'
 ENV BS_PROJECT 'Skeleton'
 ENV BS_BUILD '001'
 ENV BS_CONFIG 'mac_safari12'
