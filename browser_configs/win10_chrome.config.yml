@@ -1,0 +1,5 @@
+browser_caps:
+  -
+    "browser": "Chrome"
+    "os": "Windows"
+    "os_version": "10"

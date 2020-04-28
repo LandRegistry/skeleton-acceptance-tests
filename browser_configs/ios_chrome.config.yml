@@ -1,0 +1,6 @@
+browser_caps:
+  -
+    "device": "iPhone 8"
+    "realMobile": "true"
+    "os_version": "13"
+    "browserName": "chrome"

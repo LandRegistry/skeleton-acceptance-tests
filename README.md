@@ -158,6 +158,64 @@ You can use any the standard dev-env methods to do this.
 
 e.g. `acctest skeleton-acceptance-tests --tags @axe`
 
+## BrowserStack
+Tests can be run remotely on BrowserStack servers as part of your testing.
+This has added BrowserStack environment variables `BS_*` in the `Dockerfile`, which will need credentials.
+The full list of what we must test against can be found in [GDS Compatability](https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices),
+and are documented in the provided Desktop configurations `/browser_configs` folder.
+
+Test runs can be checked by logging into [Browserstack dashboard](https://automate.browserstack.com/) looking in the project you've specified. 
+Here you can view the video of the test, and review the logs.
+
+There are 2 main ways to use this functionality:
+
+-  The Shell script
+-  Change the web driver used in the tests
+
+BrowserStack configuration information is found in `features/support/config_browserstack.rb`.
+
+### BrowserStack shell script
+The `run_browserstack.sh` shell script will run all scenarios tagged with `@browser` against all the browser configurations
+listed in the script. See `/browser_configs` for more details.
+
+It will also out put a `report_[config_name].json` file for each run configuration, which can be used to determine pass/fails.
+
+The script can be called with:
+```shell
+run skeleton-acceptance-tests ./run_browserstack.sh
+```
+
+It's aimed to provide a simple way to run tagged scenarios through different configurations.
+
+### Change the default webdriver
+The `DRIVER` environment variable is referred to by the Capybara configuration in `features/support/config.rb`.
+The default value is `chrome`, which will use the headless chrome configuration( `:chrome`) provided with the skeleton.
+
+To change this default, change your Dockerfile entry to read `ENV DRIVER 'browserstack'`, and rebuild the container.
+This will use the driver `:browserstack` configuration in `features/support/config_browserstack.rb`.
+If you want to change browser configurations you will need to amend `BS_CONFIG` to another file from the `/browser_configs` folder too.
+
+You can now run tests against BrowserStack remote devices using the standard `acctest` alias.
+
+Example
+```shell
+# Dockerfile changes
+ENV DRIVER 'browserstack'
+ENV BS_PROJECT 'Skeleton'
+ENV BS_BUILD '001'
+ENV BS_CONFIG 'mac_safari12'
+
+# rebuild container to apply changes
+rebuild skeleton-acceptance-tests
+
+# Run my tests against browserstack
+acctest skeleton-acceptance-tests --tags @safari_example
+Console  messages ...
+```
+
+The test run results will be shown in `report.json` as usual.
+The BrowserStack dashboard will show the test run under the `Skeleton` project.
+All scenarios tagged with `@safari_example` will have run against `browser_configs/macos_safari12.config.yml`
 
 ## Universal dev-env support
 

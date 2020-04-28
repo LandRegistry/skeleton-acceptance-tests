@@ -19,6 +19,8 @@ jobs:
         ruby-version: 2.6.x
     - name: Run tests that should pass
       run: |
+        export DRIVER=chrome
+        export BS_CONFIG=win10_edge
         gem install bundler
         bundle install
         chmod +x run_tests.sh

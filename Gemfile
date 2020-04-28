@@ -8,6 +8,7 @@ source 'http://rubygems.org'
 # Patch versions (the z in x.y.z) are ok though, just bug fixes, so we allow
 # them to be upgraded implicitly
 gem 'axe-matchers', '~> 2.4.1'
+gem 'browserstack-local', '~> 1.3.0'
 gem 'capybara', '~> 3.29.0'
 gem 'capybara-screenshot', '~> 1.0.23'
 gem 'cucumber', '~> 3.1.2'

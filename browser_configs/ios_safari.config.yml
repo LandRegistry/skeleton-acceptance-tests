@@ -1,0 +1,6 @@
+browser_caps:
+  -
+    "device": "iPhone 6S"
+    "realMobile": "true"
+    "os_version": "12.1"
+    "browserName": "safari"

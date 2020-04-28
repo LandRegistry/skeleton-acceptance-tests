@@ -8,15 +8,12 @@ end
 
 Given('I search Google for {string}') do |search_term|
   # Use RSPEC assertion to make sure we are on the correct page
-  expect(page).to have_content('Gmail')
+  # Search is case insensitive, helps with mobile devices
+  # expect(page).to have_content(/Images/i)
 
   # Use Capybara "fill_in" method to put text from "search_term" variable
   # into the Google search field. which has  id: 'q'
-  fill_in('q', with: search_term)
-
-  # Clicks the first search button on the page
-  # This handles multiple search buttons on the pages
-  click_button('Google Search', match: :first)
+  fill_in('q', with: search_term).send_keys(:return)
 end
 
 Then('the text {string} is displayed on the page') do |search_text|

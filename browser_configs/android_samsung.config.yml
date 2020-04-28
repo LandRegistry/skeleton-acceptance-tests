@@ -1,0 +1,6 @@
+browser_caps:
+  -
+    "device": "Samsung Galaxy S10"
+    "realMobile": "true"
+    "os_version": "9.0"
+    "browserName": "samsung internet"

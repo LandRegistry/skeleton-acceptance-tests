@@ -1,5 +1,5 @@
 ### Acceptance test files
-report.json
+report*
 *.xml
 *.jpg
 *.DS_Store

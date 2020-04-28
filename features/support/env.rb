@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # ENV RULES
 # 1. No URL domain or username/ password should be anywhere but this env.rb file
 # The environment variable should be set in either:
@@ -17,4 +18,15 @@
 # $SERVICE_API_VERSION = ENV['SERVICE_API_VERSION']
 
 # Test Fixture(s)
-# $JENKINS_WORKSPACE = ENV['JENKINS_WORKSPACE']
+# $JENKINS_WORK SPACE = ENV['JENKINS_WORKSPACE']
+
+# Default webdriver to use. String converted to Symbol
+DRIVER = ENV['DRIVER'].to_sym
+
+# BrowserStack env vars
+BS_USERNAME = ENV['BS_USERNAME']
+BS_ACCESS_KEY = ENV['BS_ACCESS_KEY']
+BS_PROJECT = ENV['BS_PROJECT']
+BS_BUILD = ENV['BS_BUILD']
+BS_SERVER = ENV['BS_SERVER']
+BS_CONFIG = ENV['BS_CONFIG']
