@@ -1,7 +1,8 @@
+![Ruby](https://github.com/LandRegistry/skeleton-acceptance-tests/workflows/Ruby/badge.svg?branch=master)
 # Skeleton Acceptance Tests
 
-This repository is a gadget to run Cucumber acceptance tests (with [Ruby][1] and [Selenium][2]), as part of the Land Registry [common-dev-env][3].
-This gadget includes sample tests written to the HMLR UI Test Standard (Page Object Model pattern).
+This repository is a skeleton to run Cucumber acceptance tests (with [Ruby][1] and [Selenium][2]), as part of the Land Registry [common-dev-env][3].
+This skeleton includes sample tests written to the HMLR UI Test Standard (Page Object Model pattern).
 The [wiki][13] contains more detailed information on the rules and examples.
 
 The tests are written against a test service, built with the [GOV.UK prototype kit][11] hosted on heroku. The [training service][10] has basic functionality and common components found in GOV.UK services.
