@@ -12,6 +12,8 @@ require 'test/unit/assertions'
 require 'capybara-screenshot/cucumber'
 require 'net/http/post/multipart'
 require 'selenium/webdriver'
+require 'pry'
+require 'rspec/matchers'
 
 World(Test::Unit::Assertions)
 World(Capybara::DSL)
@@ -27,7 +29,7 @@ Capybara.javascript_driver = DRIVER
 Capybara.save_path = './screenshots/'
 Capybara::Screenshot.prune_strategy = :keep_last_run
 
-# Screenshot driver
+# Screenshot driver for :chrome
 Capybara::Screenshot.register_driver(DRIVER) do |driver, path|
   driver.browser.save_screenshot(path)
 end
