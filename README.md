@@ -1,10 +1,11 @@
-![Ruby](https://github.com/LandRegistry/skeleton-acceptance-tests/workflows/Ruby/badge.svg?branch=master)
-
 # Skeleton Acceptance Tests
 
-This repository is a Skeleton to run Cucumber acceptance tests (with [Ruby][1] and [Selenium][2]), as part of the Land Registry [common-dev-env][3].
-This skeleton includes sample tests to verify the basic behaviour of the skeleton, but these are not intended as standards to follow.
-Any approaches built with this skeleton should fulfil your specific needs.
+This repository is a gadget to run Cucumber acceptance tests (with [Ruby][1] and [Selenium][2]), as part of the Land Registry [common-dev-env][3].
+This gadget includes sample tests written to the HMLR UI Test Standard (Page Object Model pattern).
+The [wiki][13] contains more detailed information on the rules and examples.
+
+The tests are written against a test service, built with the [GOV.UK prototype kit][11] hosted on heroku. The [training service][10] has basic functionality and common components found in GOV.UK services.
+The training service code is hosted on [github][12], and open to contributions.
 
 ## Notes
 
@@ -58,7 +59,7 @@ The tests are run using headless chrome (you cannot see the browser open, and th
 
 
 ## Adding the skeleton to an existing dev-env
-If you are already familiar with the [common-dev-env][3] and have an existing dev-env-config 
+If you are already familiar with the [common-dev-env][3] and have an existing dev-env-config
 you can add the skeleton into your`configuration.yml`.
 
 ```yaml
@@ -66,14 +67,6 @@ you can add the skeleton into your`configuration.yml`.
     repo: git@github.com:LandRegistry/skeleton-acceptance-tests.git
     branch: master
 ```
-
-## Quick Start
-If you have no existing dev-env-config, you can use the example [acctest-dev-env-config][9], when creating a new dev-env.
-Assuming this is the first time launching the machine you will be prompted for the url of a configuration repository 
-(both SSH or HTTP(S) Git formats will work).
-
-Paste in the [acctest-dev-env-config][9] Git link and press enter.
-This will create a running dev-env with a working test configuration.
 
 ## To Run the tests
 * Firstly confirm commands listed below correspond to whats provided in the
@@ -107,10 +100,10 @@ acctest skeleton-acceptance-tests --tags "@included_tag and not @excluded_tag"
 
 ## Rubocop
 * The configuration of Rubocop and any future configuration can be done in:
-  `.rubocop.yml`. Check the `TargetRubyVersion` matches what is running in your environment  
-  
+  `.rubocop.yml`. Check the `TargetRubyVersion` matches what is running in your environment
+
 * A Rubocop evaluation of the Ruby code must be done during development, with violations resolved
-  
+
 * A standalone run of Rubocop can be done with the following commands:
 
 ```shell
@@ -120,20 +113,19 @@ acclint skeleton-acceptance-tests
 which is equivalent to
 
 ```shell
-docker-compose run --rm skeleton-acceptance-tests sh run_linting.sh
+run skeleton-acceptance-tests sh run_linting.sh
 ```
 
 Rubocop can attempt to automatically fix any linting issues in your code using the flag `-a`.
 ```shell
-docker-compose run --rm skeleton-acceptance-tests rubocop -a
+run skeleton-acceptance-tests rubocop -a
 ```
-Use this with caution. It can break your code.
 
 It's better to use this at file or folder level, rather than suite level.
 Rubocop can be used to lint a single file, rather than the whole codebase
 
 ```shell
-docker-compose run --rm skeleton-acceptance-tests rubocop -a {path to your code}
+run skeleton-acceptance-tests rubocop -a {path to your code}
 ```
 
 ## Automated Accessibility Checks (Axe)
@@ -142,8 +134,8 @@ Some automated accessibility checks, can be performed using the axe-matchers gem
 These checks will ***not prove a page is accessible***. Manual checks must still be performed.
 
 Do not add axe checks as part of other tests. Tests should be atomic.
-Axe tests should be separate from other acceptance tests. 
-Examples can be found in `features/features/axe_accessibility.feature`
+Axe tests should be separate from other acceptance tests.
+Examples can be found in `features/features/accessibility.feature`
 
 To check a page do the following:
 
@@ -164,7 +156,7 @@ This has added BrowserStack environment variables `BS_*` in the `Dockerfile`, wh
 The full list of what we must test against can be found in [GDS Compatability](https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices),
 and are documented in the provided Desktop configurations `/browser_configs` folder.
 
-Test runs can be checked by logging into [Browserstack dashboard](https://automate.browserstack.com/) looking in the project you've specified. 
+Test runs can be checked by logging into [Browserstack dashboard](https://automate.browserstack.com/) looking in the project you've specified.
 Here you can view the video of the test, and review the logs.
 
 There are 2 main ways to use this functionality:
@@ -217,6 +209,7 @@ The test run results will be shown in `report.json` as usual.
 The BrowserStack dashboard will show the test run under the `Skeleton` project.
 All scenarios tagged with `@safari_example` will have run against `browser_configs/macos_safari12.config.yml`
 
+
 ## Universal dev-env support
 
 Provided via configuration.yml, Dockerfile and fragments/docker-compose-fragment.yml.
@@ -241,4 +234,8 @@ This details the configuration of ruby. Any libraries used must be required here
 [7]: http://chromedriver.chromium.org/
 [8]: https://cucumber.io/docs
 [9]: https://github.com/aaronFlynn/acctest-dev-env-config
+[10]: https://automation-training.herokuapp.com/
+[11]: https://govuk-prototype-kit.herokuapp.com/docs
+[12]: https://github.com/flynnbops/automation-training
+[13]: https://github.com/LandRegistry/skeleton-acceptance-tests/wiki
 
